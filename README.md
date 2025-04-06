@@ -25,7 +25,9 @@ player movement/action verification is simpler with a server rather than over P2
 The server stores a TCP and a UDP connection for each client.
 
 ## TCP/UDP Uses:
-| **TCP** (ensures reliable message delivery, so it is used for important messages such as:) | **UDP** (used for time sensitive updates, such as:) |
+TCP ensure reliable message delivery, so it's used for important messsages. On the other hand, UDP is used for time-sentisitive updates. 
+
+| **TCP**  | **UDP**  |
 |--------------------------------------------------------------------------------------------|-----------------------------------------------------|
 | Game setup, including player registration, creating/joining games                          | Player/Mob movements and actions                    |
 | Important events like player/mob deaths and score updates for the leaderboard              | Damage updates                                      |
@@ -38,7 +40,7 @@ The server stores a TCP and a UDP connection for each client.
 ## Message Protocol
 When the NetworkAPI sends a message, it must be one of the provided formats 
 (see messages.h for the message structures). Every message must be preceded by a header, 
-since the socket-readings poll for the header size and determine how the remaining will be handled.
+since the socket-readings poll for the header size and determines how the remaining will be handled.
 
  ![image](https://github.com/user-attachments/assets/fd1462d9-22a8-4617-bdb8-f714548f966d)
 
@@ -81,7 +83,7 @@ Once no players are left alive, the game ends.
 ![image](https://github.com/user-attachments/assets/ae132cee-5e1f-4b88-9667-a0687b637539)
 
 The NetworkAPI can support the following features:
-•	Player registration/game connection, or leaving/disconnecting.
-•	Mob/player movement/location and actions.
-•	Chat messaging.
-•	Leaderboard system.
+- Player registration/game connection, or leaving/disconnecting.
+- Mob/player movement/location and actions.
+- Chat messaging.
+- Leaderboard system.
